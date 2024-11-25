@@ -10,7 +10,7 @@ export default function Scene() {
 
   return (
     <>
-      {/* <Camera /> */}
+      <Camera />
       <Environment preset="city" />
       <Box/>
       {/* <color attach='background' args={['#ffffff']} /> */}

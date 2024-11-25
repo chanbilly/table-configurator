@@ -20,7 +20,7 @@ export default function Camera() {
   return (
     <>
       <PerspectiveCamera makeDefault ref={cameraRef} position={cameraProp.pos} fov={30} />
-      <CameraControls ref={cameraCtrl} camera={cameraRef.current} truckSpeed={0} enabled/>
+      <CameraControls ref={cameraCtrl} camera={cameraRef.current} enabled/>
     </>
   )
 }
