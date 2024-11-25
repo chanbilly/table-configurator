@@ -558,6 +558,10 @@ video {
   visibility: visible;
 }
 
+.table {
+  display: table;
+}
+
 .hidden {
   display: none;
 }
