@@ -1,4 +1,5 @@
 import TableTop from "./TableTop"
+import { Leg } from "./Leg"
 
 import useTableStore from "../../stores/useTableStore"
 
@@ -14,6 +15,8 @@ export default function Table() {
   return (
     <group>
       <TableTop />
+      <Leg position={[-halfWidth + 0.015, -height, -halfDepth + 0.015]} height={height} rotation={[0, Math.PI / 2, 0]} scaleZ={3} />
+      <Leg position={[halfWidth - 0.015, -height, -halfDepth + 0.015 ]} height={height} rotation={[0, Math.PI / 2, 0]} />
     </group>
   )
 }

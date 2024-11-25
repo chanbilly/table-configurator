@@ -1,9 +1,11 @@
 
-import { Environment } from '@react-three/drei'
+import { Box, Environment } from '@react-three/drei'
 
 import Camera from './Camera'
+import Table from './Table'
 
 import useTableStore from '../../stores/useTableStore'
+import TableTop from './TableTop'
 
 export default function Scene() {
   const { globalState } = useTableStore()
@@ -11,7 +13,8 @@ export default function Scene() {
   return (
     <>
       <Camera />
-      <Environment preset={'sunset'} />
+      <Environment files={'/hdr/qwantani_sunset_1k.hdr'} />
+      <Table />
     </>
   )
 } 

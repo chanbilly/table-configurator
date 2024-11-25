@@ -6,13 +6,12 @@ const useTableStore = create((set) => ({
 
   // camera options
   cameraProp : {
-    introPos: [-5.543,1.72, 7.394],
-    pos: [3.278, 2.020, 4.396],
+    pos: [0.5, 0.25, 1],
   },
 
   tableProp: {
     width: 1200,
-    depth: 300,
+    depth: 30,
     height: 500, 
     color: 'white',
     position: [0,0,0],

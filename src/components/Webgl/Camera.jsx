@@ -14,7 +14,7 @@ export default function Camera() {
 
   return (
     <>
-      <PerspectiveCamera makeDefault ref={cameraRef} position={cameraProp.pos} fov={30} />
+      <PerspectiveCamera makeDefault ref={cameraRef} position={cameraProp.pos} fov={50} />
       {/* <CameraControls ref={cameraCtrl} camera={cameraRef.current} enabled/> */}
       <OrbitControls />
     </>
