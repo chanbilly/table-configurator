@@ -5,7 +5,6 @@ import Camera from './Camera'
 import Table from './Table'
 
 import useTableStore from '../../stores/useTableStore'
-import TableTop from './TableTop'
 
 export default function Scene() {
   const { globalState } = useTableStore()

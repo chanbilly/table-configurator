@@ -4,15 +4,11 @@ import useTableStore from "../../stores/useTableStore"
 
 export default function TableTop() {
   const { tableProp } = useTableStore()
-  const width = tableProp.width / 1000
-  const depth = tableProp.depth / 1000
-  const height = tableProp.height / 1000
-  console.log(width, depth, height)
 
   return (
-    <mesh position={tableProp.position}>
+    <mesh position={[0,0,0]}>
       <Box
-        args={[width, depth, height]}
+        args={[tableProp.width, tableProp.height, tableProp.depth]}
       />
       <meshStandardMaterial 
         color={tableProp.color}

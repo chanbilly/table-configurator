@@ -1,21 +1,22 @@
 import { create } from 'zustand'
 
 const useTableStore = create((set) => ({
-  globalState: 'loading', // loading, view360, configurator
+  globalState: 'loading', // loading, start
   setGlobalState: (_state) => set(() => ({ globalState: _state })),
 
   // camera options
   cameraProp : {
-    pos: [0.5, 0.25, 1],
+    pos: [2, 0.35, 2],
   },
 
   tableProp: {
-    width: 1200,
-    depth: 30,
-    height: 500, 
+    width: 1.2,
+    depth: 0.3,
+    height: 0.03, 
+    leg: 0.5,
     color: 'white',
-    position: [0,0,0],
-  }
-}));
+  },
+  setTableProp: (newProps) => set((state) => ({ tableProp: { ...state.tableProp, ...newProps } }))
+}))
 
 export default useTableStore;
