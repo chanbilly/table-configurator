@@ -11,11 +11,10 @@ export function Leg(props) {
   const legMainRef = useRef()
   const legScrewRef = useRef()
   
-  
+  const normalizedDepth = normalizeDepth(tableProp.depth)
+  const normalizedHeight = normalizeLeg(tableProp.leg)
+
   useEffect(() => {
-    const normalizedDepth = normalizeDepth(tableProp.depth)
-    const normalizedHeight = normalizeLeg(tableProp.leg)
-    
     if (legMainRef.current && legMainRef.current.morphTargetInfluences) {
       legMainRef.current.morphTargetInfluences[0] = 1 - normalizedDepth
       legMainRef.current.morphTargetInfluences[1] = 1 - normalizedHeight
@@ -27,28 +26,33 @@ export function Leg(props) {
     }
   }, [tableProp.depth, tableProp.leg])
 
+  const halfWidth = tableProp.width / 2
+  const halfDepth = tableProp.depth / 2
+
   return (
-    <group {...props} dispose={null}>
-      <mesh
-        name="Cube007"
-        ref={legMainRef}
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube007.geometry}
-        material={materials.legs_mat}
-        morphTargetDictionary={nodes.Cube007.morphTargetDictionary}
-        morphTargetInfluences={nodes.Cube007.morphTargetInfluences}
-      />
-      <mesh
-        name="Cube007_1"
-        ref={legScrewRef}
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube007_1.geometry}
-        material={materials.metal}
-        morphTargetDictionary={nodes.Cube007_1.morphTargetDictionary}
-        morphTargetInfluences={nodes.Cube007_1.morphTargetInfluences}
-      />
+    <group position={[0,0,0]}>
+      <group {...props} dispose={null}>
+        <mesh
+          name="Cube007"
+          ref={legMainRef}
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube007.geometry}
+          material={materials.legs_mat}
+          morphTargetDictionary={nodes.Cube007.morphTargetDictionary}
+          morphTargetInfluences={nodes.Cube007.morphTargetInfluences}
+        />
+        <mesh
+          name="Cube007_1"
+          ref={legScrewRef}
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube007_1.geometry}
+          material={materials.metal}
+          morphTargetDictionary={nodes.Cube007_1.morphTargetDictionary}
+          morphTargetInfluences={nodes.Cube007_1.morphTargetInfluences}
+        />
+      </group>
     </group>
   )
 }

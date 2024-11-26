@@ -12,7 +12,7 @@ export default function Scene() {
   return (
     <>
       <Camera />
-      <Environment files={'/hdr/qwantani_sunset_1k.hdr'} />
+      <Environment files={'/hdr/qwantani_sunset_1k.hdr'} background blur={0.6}/>
       <Table />
     </>
   )

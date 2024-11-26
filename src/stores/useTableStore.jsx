@@ -9,12 +9,22 @@ const useTableStore = create((set) => ({
     pos: [2, 0.35, 2],
   },
 
+  // Table top options
+  colors: [
+    { id: 'oak', value: '#c7b299', label: 'Oak' },
+    { id: 'bronze', value: '#cd7f32', label: 'Bronze' },
+    { id: 'black', value: '#1c1c1c', label: 'Black' },
+    { id: 'white', value: '#f0f0f0', label: 'White' },
+    { id: 'walnut', value: '#773f1a', label: 'Walnut' },
+  ],
+
   tableProp: {
     width: 1.2,
     depth: 0.3,
     height: 0.03, 
     leg: 0.5,
-    color: 'white',
+    color: '#f0f0f0',
+    feet: 1,
   },
   setTableProp: (newProps) => set((state) => ({ tableProp: { ...state.tableProp, ...newProps } }))
 }))
