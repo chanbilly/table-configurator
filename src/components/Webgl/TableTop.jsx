@@ -13,7 +13,7 @@ export default function TableTop() {
   const legHeight = tableProp.leg + 0.55
 
   return (
-    <mesh position={[0, 0, 0]}>
+    <mesh castShadow receiveShadow position={[0, 0, 0]}>
       <Box args={[tableProp.width, tableProp.height, tableProp.depth]}>
         <meshStandardMaterial
           color={tableProp.color}
@@ -21,10 +21,10 @@ export default function TableTop() {
           metalness={0.2}
         />
       </Box>
-      <Feet position={[halfWidth - 0.015, -legHeight - 0.46, halfDepth -0.02]} scale={1} />
-      <Feet position={[-halfWidth + 0.015, -legHeight - 0.46, halfDepth -0.02]} scale={1} />
-      <Feet position={[halfWidth - 0.015, -legHeight - 0.46, -halfDepth + 0.02]} scale={1} />
-      <Feet position={[-halfWidth + 0.015, -legHeight - 0.46, -halfDepth + 0.02]} scale={1} />
+      <Feet position={[halfWidth - 0.015, -legHeight - 0.46, halfDepth -0.025]} scale={1} />
+      <Feet position={[-halfWidth + 0.015, -legHeight - 0.46, halfDepth -0.025]} scale={1} />
+      <Feet position={[halfWidth - 0.015, -legHeight - 0.46, -halfDepth + 0.025]} scale={1} />
+      <Feet position={[-halfWidth + 0.015, -legHeight - 0.46, -halfDepth + 0.025]} scale={1} />
     </mesh>
   )
 }

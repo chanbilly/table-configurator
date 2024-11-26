@@ -11,10 +11,10 @@ const useTableStore = create((set) => ({
 
   // Table top options
   colors: [
-    { id: 'oak', value: '#c7b299', label: 'Oak' },
-    { id: 'bronze', value: '#cd7f32', label: 'Bronze' },
-    { id: 'black', value: '#1c1c1c', label: 'Black' },
-    { id: 'white', value: '#f0f0f0', label: 'White' },
+    { id: 'oak', value: '#c7b299', label: 'Ashwood' },
+    { id: 'bronze', value: '#cd7f32', label: 'Cedar' },
+    { id: 'black', value: '#1c1c1c', label: 'PlasticBlack' },
+    { id: 'white', value: '#f0f0f0', label: 'PlasticWhite' },
     { id: 'walnut', value: '#773f1a', label: 'Walnut' },
   ],
 
