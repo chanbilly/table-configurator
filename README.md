@@ -1,4 +1,3 @@
-```markdown
 # Table Configurator
 
 This is a 3D table configurator application built with ViteJS, React, Three.js, and React Three Fiber.
