@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 
 const useTableStore = create((set) => ({
-  globalState: 'loading', // loading, start
+  globalState: 'loading', 
   setGlobalState: (_state) => set(() => ({ globalState: _state })),
 
   // camera options

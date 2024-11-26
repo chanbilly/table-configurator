@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useState } from 'react'
 import useTableStore from '../../stores/useTableStore'
 
 export default function Configurator() {

@@ -1,5 +1,3 @@
-import * as THREE from 'three'
-
 import { Box } from "@react-three/drei"
 import Feet from "./Feet"
 
