@@ -1,6 +1,5 @@
 import { Box } from "@react-three/drei"
 import useTableStore from "../../stores/useTableStore"
-// import * as THREE from 'three'
 
 export default function TableTop() {
   const { tableProp } = useTableStore()

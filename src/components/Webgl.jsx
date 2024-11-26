@@ -14,7 +14,7 @@ export default function Webgl() {
   }
 
   return (
-    <div className='glContainer h-screen w-screen'>
+    <div className='glContainer h-screen w-4/5'>
       <Canvas gl={{ alpha: true }} >
         <Suspense fallback={<HandleLoading load={setIsLoading} />}>
           {/* <Perf/> */}

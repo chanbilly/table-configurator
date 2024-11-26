@@ -11,19 +11,21 @@ export function Leg(props) {
   const legMainRef = useRef()
   const legScrewRef = useRef()
   
+  
   useEffect(() => {
-    const normalizedHeight = normalize(tableProp.leg)
+    const normalizedDepth = normalizeDepth(tableProp.depth)
+    const normalizedHeight = normalizeLeg(tableProp.leg)
     
     if (legMainRef.current && legMainRef.current.morphTargetInfluences) {
-      legMainRef.current.morphTargetInfluences[0] = 0
+      legMainRef.current.morphTargetInfluences[0] = 1 - normalizedDepth
       legMainRef.current.morphTargetInfluences[1] = 1 - normalizedHeight
     }
     
     if (legScrewRef.current && legScrewRef.current.morphTargetInfluences) {
-      legScrewRef.current.morphTargetInfluences[0] = 0
+      legScrewRef.current.morphTargetInfluences[0] = 1 - normalizedDepth
       legScrewRef.current.morphTargetInfluences[1] = 1 - normalizedHeight
     }
-  }, [tableProp.leg])
+  }, [tableProp.depth, tableProp.leg])
 
   return (
     <group {...props} dispose={null}>
@@ -51,13 +53,20 @@ export function Leg(props) {
   )
 }
 
-function normalize(value) {
+function normalizeLeg(value) {
   const minHeight = 0.50
   const maxHeight = 1.20
   const height = (maxHeight - value) / (maxHeight - minHeight)
   return Math.min(Math.max(height, 0), 1)
 }
 
+
+function normalizeDepth(value) {
+  const minDepth = 0.3
+  const maxDepth = 1.5
+  const depth = (maxDepth - value) / (maxDepth - minDepth)
+  return Math.min(Math.max(depth, 0.5), 1)
+}
 
 useGLTF.preload(leg)
 

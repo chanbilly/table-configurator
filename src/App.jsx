@@ -8,8 +8,10 @@ import Configurator from "./components/UI/ConfiguratorMenu"
 function App() {
   return (
     <Suspense fallback={null}>
-      <Webgl/>
-      <Configurator/>
+      <div className="relative">
+        <Webgl/>
+        <Configurator/>
+      </div>
     </Suspense>
   )
 }
