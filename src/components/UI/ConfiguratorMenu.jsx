@@ -78,15 +78,15 @@ export default function Configurator() {
           <div className="py-4">
             <ul className="flex gap-2 flex-wrap">
               {colors.map((color) => (
-                <li key={color.id}>
+                <li key={color.id} id={color.id}>
                   <button
                     className={`w-12 h-12 rounded-full border-2 transition-all ${
-                      tableProp.color === color.value 
+                      tableProp.color === color.id
                         ? 'border-blue-500 scale-110' 
                         : 'border-gray-200 hover:scale-105'
                     }`}
                     style={{ backgroundColor: color.value }}
-                    onClick={() => handleColorChange(color.value)}
+                    onClick={() => handleColorChange(color.id)}
                     title={color.label}
                   />
                 </li>
